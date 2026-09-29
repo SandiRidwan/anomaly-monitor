@@ -19,6 +19,7 @@ from config import COLORS as C, DB_FILE, MARTS, REPORTS  # noqa: E402
 import explanations as X  # noqa: E402
 import insights_content  # noqa: E402,F401
 import insight as INS  # noqa: E402
+import echarts_charts as EC  # noqa: E402  (calendar_heatmap, boxplot)
 
 st.set_page_config(page_title="Anomaly Monitor", page_icon="🚨", layout="wide")
 
@@ -146,6 +147,26 @@ with t1:
         st.plotly_chart(fig, use_container_width=True)
     INS.box("top", st=st)
 
+    st.markdown("#### Kalender frekuensi anomali (calendar heatmap ECharts)")
+    st.caption("Calendar heatmap menampilkan **hari mana** anomali menumpuk — "
+               "pola mingguan/musiman (mis. lonjakan saat rilis data ekonomi atau "
+               "event pasar) langsung terlihat. Gelap = lebih banyak anomali.")
+    try:
+        if len(anom) and "ts" in anom.columns:
+            _a = anom.copy()
+            _a["d"] = pd.to_datetime(_a["ts"], errors="coerce")
+            _a = _a.dropna(subset=["d"])
+            if len(_a):
+                _yr = int(_a["d"].dt.year.mode().iloc[0])
+                _cnt = (_a[_a["d"].dt.year == _yr]["d"].dt.strftime("%Y-%m-%d")
+                        .value_counts())
+                _cal = [[k, int(v)] for k, v in _cnt.items()]
+                EC.calendar_heatmap(_yr, _cal,
+                                    title=f"Anomali per hari — {_yr}", height=280)
+    except Exception as _e:  # noqa: BLE001
+        st.caption(f"calendar heatmap tak tersedia ({_e}).")
+    INS.box("top", st=st)
+
 with t2:
     X.render("methods", st=st)
     if _S == "db" and not det.empty:
@@ -155,6 +176,24 @@ with t2:
         style(fig, 380).update_layout(xaxis_title="", yaxis_title="flag")
         st.plotly_chart(fig, use_container_width=True)
     st.dataframe(stats, use_container_width=True, hide_index=True)
+
+    st.markdown("#### Sebaran skor anomali per sumber (boxplot ECharts)")
+    st.caption("Boxplot memperlihatkan **seberapa ekstrem** anomali tiap sumber "
+               "dan apakah ada yang jauh di luar kebiasaan. Sumber dengan kotak "
+               "tinggi = anomali besar & beragam; titik jauh = outlier ekstrem.")
+    try:
+        if len(anom) and "source" in anom.columns and "score" in anom.columns:
+            _sb = (anom.groupby("source")["score"].apply(list))
+            _sb = _sb[_sb.map(len) >= 2]
+            if len(_sb):
+                EC.boxplot(
+                    categories=[str(k) for k in _sb.index],
+                    values=[list(v) for v in _sb.values],
+                    title="Sebaran skor anomali per sumber", yname="skor |z|",
+                    height=400)
+    except Exception as _e:  # noqa: BLE001
+        st.caption(f"boxplot tak tersedia ({_e}).")
+    INS.box("methods", st=st)
 
 with t3:
     X.render("method", st=st)
