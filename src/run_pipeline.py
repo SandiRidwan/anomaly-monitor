@@ -26,7 +26,8 @@ def main() -> int:
     steps = []
     if not args.no_ingest:
         steps.append(SRC / "ingest.py")
-    steps += [SRC / "analyze.py", ROOT / "tests" / "test_anomaly.py"]
+    steps += [SRC / "analyze.py", SRC / "decide_actions.py",
+              ROOT / "tests" / "test_anomaly.py"]
     for s in steps:
         if not run(s):
             print(f"\n✗ PIPELINE GAGAL di {s.name}")
