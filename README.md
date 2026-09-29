@@ -7,6 +7,8 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-10-2E6F95?style=for-the-badge)
 
+### 🔗 [**Buka Dashboard Live →**](https://anomaly-monitor-xq2vjmv5myyf7cuxnjhusl.streamlit.app)
+
 </div>
 
 ---
