@@ -79,3 +79,79 @@ register(
         "setiap keputusan menyertakan justifikasi yang dapat diaudit."),
     tingkat="tinggi",
 )
+
+
+# --------------------------------------------------------------------------
+# Chart ECharts (v2) — insight & rekomendasi.
+# --------------------------------------------------------------------------
+
+register(
+    "echarts_calendar",
+    kesimpulan=(
+        "Kalender frekuensi anomali memetakan KAPAN anomali menumpuk. Pola yang "
+        "terlihat (mis. mengelompok di hari/pekan tertentu) menunjukkan anomali "
+        "tidak acak — sering terkait rilis data ekonomi, jadwal pasar, atau "
+        "peristiwa kalender. Ini mengubah pertanyaan dari 'apa' menjadi 'kapan "
+        "waspada'."),
+    rekomendasi=[
+        "Naikkan sensitivitas pemantauan pada periode berisiko yang teridentifikasi.",
+        "Cek apakah klaster bertepatan dengan event terjadwal (rilis CPI, FOMC, "
+        "libur pasar) — bila ya, itu ekspektasi, bukan kejutan.",
+        "Untuk klaster di luar event, selidiki penyebab struktural (perubahan "
+        "kebijakan, gangguan pasokan data).",
+    ],
+    risiko=(
+        "Tanpa pandangan temporal, tim bereaksi ad-hoc. Anomali yang sesungguhnya "
+        "musiman bisa diperlakukan sebagai kejutan, memicu alarm berlebihan "
+        "pada periode yang sebenarnya dapat diantisipasi."),
+    tingkat="sedang",
+)
+
+register(
+    "echarts_scores",
+    kesimpulan=(
+        "Boxplot skor anomali per sumber membandingkan SEBARAN & TINGKAT "
+        "keparahan anomali antar-sumber. Sumber dengan kotak lebih tinggi dan "
+        "ekor lebih panjang menghasilkan anomali lebih ekstrem/beragam; sumber "
+        "dengan sebaran sempit relatif lebih stabil. Perbedaan ini penting: "
+        "ambang tunggal untuk semua sumber akan salah kalibrasi."),
+    rekomendasi=[
+        "Kalibrasi ambang per sumber, bukan satu ambang global — sebaran tiap "
+        "sumber berbeda.",
+        "Selidiki sumber dengan banyak pencilan ekstrem lebih dulu (risiko "
+        "operasional tertinggi).",
+        "Audit apakah pencilan berasal dari lonjakan nyata atau kualitas data "
+        "buruk (mis. gap API).",
+    ],
+    risiko=(
+        "Ambang seragam membuat sumber bervolatilitas tinggi terus memicu alarm "
+        "(alert fatigue) sementara sumber tenang melewatkan anomali nyata. "
+        "Keduanya menurunkan kepercayaan pada sistem."),
+    tingkat="sedang",
+)
+
+
+# --------------------------------------------------------------------------
+# Perbaikan: key yang dipanggil dashboard tapi belum terdaftar (kotak insight
+# sebelumnya kosong diam-diam).
+# --------------------------------------------------------------------------
+
+register(
+    "series",
+    kesimpulan=(
+        "Tren per sumber mempertemukan nilai mentah dengan titik anomali yang "
+        "ditandai. Terlihat apakah anomali berdiri sendiri (spike tunggal) atau "
+        "bagian dari pergeseran level — dua hal dengan tindak lanjut berbeda."),
+    rekomendasi=[
+        "Anomali spike tunggal → verifikasi cepat, lalu pantau singkat.",
+        "Anomali beruntun pada satu sumber → selidiki perubahan rezim "
+        "(kebijakan, gangguan pasokan data), bukan sekadar satu titik.",
+        "Bandingkan antar-sumber: kejutan serentak sering menandakan pemicu "
+        "makro, bukan masalah data.",
+    ],
+    risiko=(
+        "Membaca satu titik anomali tanpa konteks tren bisa memicu reaksi "
+        "berlebihan. Sebaliknya, mengabaikan anomali beruntun berarti melewatkan "
+        "pergeseran regime yang nyata."),
+    tingkat="sedang",
+)

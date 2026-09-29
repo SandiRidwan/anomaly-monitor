@@ -165,7 +165,7 @@ with t1:
                                     title=f"Anomali per hari — {_yr}", height=280)
     except Exception as _e:  # noqa: BLE001
         st.caption(f"calendar heatmap tak tersedia ({_e}).")
-    INS.box("top", st=st)
+    INS.box("echarts_calendar", st=st)
 
 with t2:
     X.render("methods", st=st)
@@ -193,7 +193,7 @@ with t2:
                     height=400)
     except Exception as _e:  # noqa: BLE001
         st.caption(f"boxplot tak tersedia ({_e}).")
-    INS.box("methods", st=st)
+    INS.box("echarts_scores", st=st)
 
 with t3:
     X.render("method", st=st)
