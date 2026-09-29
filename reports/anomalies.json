@@ -1,0 +1,308 @@
+{
+  "generated_at": "2026-09-29T08:07:08.354884+00:00",
+  "thresholds": {
+    "z": 2.5,
+    "ewma_pct": 0.08,
+    "iqr_k": 2.0
+  },
+  "count": 33,
+  "anomalies": [
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2026-07-08 00:00:00",
+      "value": 18089.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 2.29
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2026-06-09 00:00:00",
+      "value": 17950.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 2.13
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2026-06-12 00:00:00",
+      "value": 17788.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 1.94
+    },
+    {
+      "source": "btc_usd",
+      "nama": "Harga Bitcoin USD",
+      "ts": "2026-09-22 00:00:00",
+      "value": 86596.74004249526,
+      "n_methods": 3,
+      "methods": "z,ewma,iqr",
+      "score": 1.91
+    },
+    {
+      "source": "jkt_temp",
+      "nama": "Suhu Jakarta (°C)",
+      "ts": "2026-09-28 18:00:00",
+      "value": 23.9,
+      "n_methods": 3,
+      "methods": "z,ewma,iqr",
+      "score": 1.76
+    },
+    {
+      "source": "jkt_temp",
+      "nama": "Suhu Jakarta (°C)",
+      "ts": "2026-09-27 14:00:00",
+      "value": 23.9,
+      "n_methods": 2,
+      "methods": "z,ewma",
+      "score": 1.76
+    },
+    {
+      "source": "jkt_temp",
+      "nama": "Suhu Jakarta (°C)",
+      "ts": "2026-09-18 18:00:00",
+      "value": 24.5,
+      "n_methods": 3,
+      "methods": "z,ewma,iqr",
+      "score": 1.55
+    },
+    {
+      "source": "btc_usd",
+      "nama": "Harga Bitcoin USD",
+      "ts": "2026-09-04 00:00:00",
+      "value": 81264.70153038795,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 1.26
+    },
+    {
+      "source": "jkt_temp",
+      "nama": "Suhu Jakarta (°C)",
+      "ts": "2026-09-19 10:00:00",
+      "value": 25.4,
+      "n_methods": 3,
+      "methods": "z,ewma,iqr",
+      "score": 1.25
+    },
+    {
+      "source": "btc_usd",
+      "nama": "Harga Bitcoin USD",
+      "ts": "2026-09-19 00:00:00",
+      "value": 80873.58287659245,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 1.21
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2023-02-06 00:00:00",
+      "value": 15161.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 1.2
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2023-01-12 00:00:00",
+      "value": 15277.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 1.07
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2023-11-17 00:00:00",
+      "value": 15376.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.95
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2025-04-04 00:00:00",
+      "value": 16958.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.94
+    },
+    {
+      "source": "btc_usd",
+      "nama": "Harga Bitcoin USD",
+      "ts": "2026-08-22 00:00:00",
+      "value": 78317.77716345884,
+      "n_methods": 3,
+      "methods": "z,ewma,iqr",
+      "score": 0.89
+    },
+    {
+      "source": "jkt_temp",
+      "nama": "Suhu Jakarta (°C)",
+      "ts": "2026-09-27 13:00:00",
+      "value": 26.5,
+      "n_methods": 2,
+      "methods": "z,ewma",
+      "score": 0.87
+    },
+    {
+      "source": "jkt_temp",
+      "nama": "Suhu Jakarta (°C)",
+      "ts": "2026-09-21 00:00:00",
+      "value": 26.5,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.87
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2024-10-03 00:00:00",
+      "value": 15468.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.84
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2023-11-15 00:00:00",
+      "value": 15482.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.82
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2024-08-14 00:00:00",
+      "value": 15605.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.67
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2024-11-07 00:00:00",
+      "value": 15660.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.61
+    },
+    {
+      "source": "jkt_temp",
+      "nama": "Suhu Jakarta (°C)",
+      "ts": "2026-09-08 13:00:00",
+      "value": 27.3,
+      "n_methods": 2,
+      "methods": "z,ewma",
+      "score": 0.6
+    },
+    {
+      "source": "jkt_temp",
+      "nama": "Suhu Jakarta (°C)",
+      "ts": "2026-09-21 12:00:00",
+      "value": 27.3,
+      "n_methods": 3,
+      "methods": "z,ewma,iqr",
+      "score": 0.6
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2024-06-14 00:00:00",
+      "value": 16486.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.38
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2025-05-02 00:00:00",
+      "value": 16444.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.33
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2024-11-14 00:00:00",
+      "value": 15954.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.26
+    },
+    {
+      "source": "btc_usd",
+      "nama": "Harga Bitcoin USD",
+      "ts": "2026-08-21 00:00:00",
+      "value": 73020.94563440893,
+      "n_methods": 3,
+      "methods": "z,ewma,iqr",
+      "score": 0.24
+    },
+    {
+      "source": "btc_usd",
+      "nama": "Harga Bitcoin USD",
+      "ts": "2026-08-20 00:00:00",
+      "value": 69291.0104297816,
+      "n_methods": 3,
+      "methods": "z,ewma,iqr",
+      "score": 0.22
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2025-06-24 00:00:00",
+      "value": 16324.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.19
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2024-12-19 00:00:00",
+      "value": 16314.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.17
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2025-08-13 00:00:00",
+      "value": 16128.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.05
+    },
+    {
+      "source": "usd_idr",
+      "nama": "Kurs USD/IDR",
+      "ts": "2025-02-14 00:00:00",
+      "value": 16205.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.04
+    },
+    {
+      "source": "jkt_temp",
+      "nama": "Suhu Jakarta (°C)",
+      "ts": "2026-09-27 09:00:00",
+      "value": 29.0,
+      "n_methods": 2,
+      "methods": "z,iqr",
+      "score": 0.02
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+﻿__pycache__/
+*.py[cod]
+.venv/
+venv/
+db/*.duckdb
+db/*.duckdb.wal
+data/staging/*
+!data/staging/.gitkeep
+data/marts/*.csv
+# detections besar tidak di-commit (dibangun ulang)
+data/marts/detections.parquet
+reports/_*
+.env
